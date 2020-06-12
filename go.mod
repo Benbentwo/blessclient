@@ -1,4 +1,4 @@
-module github.com/chanzuckerberg/blessclient
+module github.com/Benbentwo/blessclient
 
 go 1.14
 
