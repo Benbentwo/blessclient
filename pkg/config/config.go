@@ -30,6 +30,8 @@ type Config struct {
 	ConfigKmsAuth KmsConfig   `yaml:"KMSAUTH_CONFIG"`
 
 	// TODO probably remove these
+	// ClientConfig has configuration related to blessclient
+	ClientConfig ClientConfig `yaml:"client_config"`
 	// LambdaConfig holds configuration around the bless lambda
 	LambdaConfig LambdaConfig `yaml:"lambda_config"`
 	// For convenience, you can bundle an ~/.ssh/config template here
@@ -78,14 +80,14 @@ type KmsContext struct {
 	UserType string `yaml:"user_type"`
 }
 
-// type ClientConfig struct {
-// 	// The OIDC client_id
-// 	OIDCClientID string `yaml:"oidc_client_id"`
-// 	// Oidc issuer url: eg: foo.okta.com
-// 	OIDCIssuerURL string `yaml:"oidc_issuer_url"`
-// 	// RoleARN is the aws role arn to assume to invoke the CA lambda
-// 	RoleARN string `yaml:"role_arn"`
-// }
+type ClientConfig struct {
+	// The OIDC client_id
+	OIDCClientID string `yaml:"oidc_client_id"`
+	// Oidc issuer url: eg: foo.okta.com
+	OIDCIssuerURL string `yaml:"oidc_issuer_url"`
+	// RoleARN is the aws role arn to assume to invoke the CA lambda
+	RoleARN string `yaml:"role_arn"`
+}
 
 // Region is an aws region that contains an aws lambda
 type Region struct {

@@ -3,12 +3,12 @@ package cmd
 import (
 	"os"
 
+	"github.com/Benbentwo/blessclient/pkg/bless"
+	"github.com/Benbentwo/blessclient/pkg/config"
+	cziSSH "github.com/Benbentwo/blessclient/pkg/ssh"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sts"
-	"github.com/chanzuckerberg/blessclient/pkg/bless"
-	"github.com/chanzuckerberg/blessclient/pkg/config"
-	cziSSH "github.com/chanzuckerberg/blessclient/pkg/ssh"
 	cziAWS "github.com/chanzuckerberg/go-misc/aws"
 	oidc "github.com/chanzuckerberg/go-misc/oidc_cli"
 	"github.com/pkg/errors"

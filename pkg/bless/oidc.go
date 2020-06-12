@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/chanzuckerberg/blessclient/pkg/config"
+	"github.com/Benbentwo/blessclient/pkg/config"
 	cziAWS "github.com/chanzuckerberg/go-misc/aws"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/pkg/errors"

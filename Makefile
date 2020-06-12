@@ -1,13 +1,13 @@
 SHA=$(shell git rev-parse --short HEAD)
 VERSION=$(shell cat VERSION)
 DIRTY=$(shell if `git diff-index --quiet HEAD --`; then echo false; else echo true;  fi)
-LDFLAGS=-ldflags "-w -s -X github.com/chanzuckerberg/blessclient/pkg/util.GitSha=${SHA} -X github.com/chanzuckerberg/blessclient/pkg/util.Version=${VERSION} -X github.com/chanzuckerberg/blessclient/pkg/util.Dirty=${DIRTY}"
+LDFLAGS=-ldflags "-w -s -X github.com/Benbentwo/blessclient/pkg/util.GitSha=${SHA} -X github.com/Benbentwo/blessclient/pkg/util.Version=${VERSION} -X github.com/Benbentwo/blessclient/pkg/util.Dirty=${DIRTY}"
 export GO111MODULE=on
 export CGO_ENABLED=1
 
 setup:
 	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- v1.23.8
-	curl -L https://raw.githubusercontent.com/chanzuckerberg/bff/master/download.sh | sh
+	curl -L https://raw.githubusercontent.com/Benbentwo/bff/master/download.sh | sh
 	curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- v0.9.17
 .PHONY: setup
 

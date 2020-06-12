@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/chanzuckerberg/blessclient/pkg/config"
+	"github.com/Benbentwo/blessclient/pkg/config"
 	"github.com/stretchr/testify/require"
 	yaml "gopkg.in/yaml.v2"
 )

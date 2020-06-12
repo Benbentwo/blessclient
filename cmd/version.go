@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/chanzuckerberg/blessclient/pkg/util"
+	"github.com/Benbentwo/blessclient/pkg/util"
 	"github.com/spf13/cobra"
 )
 

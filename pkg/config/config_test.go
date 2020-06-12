@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/chanzuckerberg/blessclient/pkg/config"
+	"github.com/Benbentwo/blessclient/pkg/config"
 	cziAws "github.com/chanzuckerberg/go-misc/aws"
 	cziAWSMocks "github.com/chanzuckerberg/go-misc/aws/mocks"
 	"github.com/golang/mock/gomock"

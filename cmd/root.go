@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/chanzuckerberg/blessclient/pkg/config"
-	"github.com/chanzuckerberg/blessclient/pkg/util"
+	"github.com/Benbentwo/blessclient/pkg/config"
+	"github.com/Benbentwo/blessclient/pkg/util"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

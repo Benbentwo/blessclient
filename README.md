@@ -1,7 +1,7 @@
 # blessclient
-[![codecov](https://codecov.io/gh/chanzuckerberg/blessclient/branch/master/graph/badge.svg)](https://codecov.io/gh/chanzuckerberg/blessclient) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/chanzuckerberg/blessclient)
+[![codecov](https://codecov.io/gh/Benbentwo/blessclient/branch/master/graph/badge.svg)](https://codecov.io/gh/Benbentwo/blessclient) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/Benbentwo/blessclient)
 
-**Please note**: If you believe you have found a security issue, _please responsibly disclose_ by contacting us at [security@chanzuckerberg.com](mailto:security@chanzuckerberg.com).
+**Please note**: If you believe you have found a security issue, _please responsibly disclose_ by contacting us at [security@Benbentwo.com](mailto:security@Benbentwo.com).
 
 ----
 
@@ -17,7 +17,7 @@ For the time-being `brew install blessclient` will still point to `v0.x.x`
 
 You can use homebrew to install with
 ```
-brew tap chanzuckerberg/tap
+brew tap Benbentwo/tap
 brew install blessclient@0
 ```
 
@@ -33,12 +33,12 @@ More to come.
 You can use homebrew -
 
 ```
-brew tap chanzuckerberg/tap
+brew tap Benbentwo/tap
 brew install blessclient
 ```
 
 ### Linux
-Binaries are available on the [releases](https://github.com/chanzuckerberg/blessclient/releases) page. Download one for your architecture, put it in your path and make it executable.
+Binaries are available on the [releases](https://github.com/Benbentwo/blessclient/releases) page. Download one for your architecture, put it in your path and make it executable.
 
 You might also need to install `libusb-dev`. For ubuntu you can install `libusb-1.0-0-dev`.
 
@@ -114,10 +114,10 @@ ssh -V
 ### Deploying BLESS
 There are already [several](https://github.com/lyft/python-blessclient#run-a-bless-lambda-in-aws) [great](http://marcyoung.us/post/bless-part1/) [guides](https://www.tastycidr.net/a-practical-guide-to-deploying-netflixs-bless-certificate-authority/) on how to run a BLESS lambda. If you take a moment to skim through these, you'll notice that setting up a successful BLESS deployment requires thorough knowledge of AWS Lambda and IAM. Even then, you'll probably spend hours digging through CloudWatch logs (and who likes doing that).
 
-To further simplify this process, we've put together a terraform [provider](https://github.com/chanzuckerberg/terraform-provider-bless) and [module](https://github.com/chanzuckerberg/cztack/tree/master/bless-ca) to automate BLESS deployments.
+To further simplify this process, we've put together a terraform [provider](https://github.com/Benbentwo/terraform-provider-bless) and [module](https://github.com/Benbentwo/cztack/tree/master/bless-ca) to automate BLESS deployments.
 
 ## Contributing
-Contributions and ideas are welcome! Please don't hesitate to open an issue, join our [gitter chat room](https://gitter.im/chanzuckerberg/blessclient), or send a pull request.
+Contributions and ideas are welcome! Please don't hesitate to open an issue, join our [gitter chat room](https://gitter.im/Benbentwo/blessclient), or send a pull request.
 
 Go version >= 1.12 required.
 

@@ -5,7 +5,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/chanzuckerberg/blessclient/pkg/util"
+	"github.com/Benbentwo/blessclient/pkg/util"
 	"github.com/pkg/errors"
 )
 

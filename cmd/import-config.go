@@ -8,7 +8,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/chanzuckerberg/blessclient/pkg/config"
+	"github.com/Benbentwo/blessclient/pkg/config"
 	getter "github.com/hashicorp/go-getter"
 	"github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"

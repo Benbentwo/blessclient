@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/chanzuckerberg/blessclient/cmd"
+	"github.com/Benbentwo/blessclient/cmd"
 	"github.com/sirupsen/logrus"
 )
 

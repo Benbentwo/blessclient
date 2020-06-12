@@ -10,7 +10,7 @@ import (
 
 	"github.com/cenkalti/backoff"
 
-	"github.com/chanzuckerberg/blessclient/pkg/util"
+	"github.com/Benbentwo/blessclient/pkg/util"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )

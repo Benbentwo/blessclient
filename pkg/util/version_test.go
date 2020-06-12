@@ -3,7 +3,7 @@ package util_test
 import (
 	"testing"
 
-	"github.com/chanzuckerberg/blessclient/pkg/util"
+	"github.com/Benbentwo/blessclient/pkg/util"
 	"github.com/stretchr/testify/require"
 )
 
