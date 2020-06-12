@@ -1,14 +1,14 @@
 package config
 
 import (
-	"io/ioutil"
-	"os"
-	"path"
-
+	"github.com/Benbentwo/blessclient/pkg/bless"
 	"github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	yaml "gopkg.in/yaml.v2"
+	"io/ioutil"
+	"os"
+	"path"
 )
 
 const (
@@ -24,13 +24,13 @@ type Config struct {
 	// Version versions this config
 	Version int `yaml:"version"`
 
-	ConfigBless   BlessConfig `yaml:"BLESS_CONFIG"`
-	ConfigClient  ClientConig `yaml:"CLIENT_CONFIG"`
-	ConfigAws     AwsConfig   `yaml:"AWS_CONFIG"`
-	ConfigKmsAuth KmsConfig   `yaml:"KMSAUTH_CONFIG"`
+	ConfigBless   BlessConfig       `yaml:"BLESS_CONFIG"`
+	ConfigClient  BlessClientConfig `yaml:"CLIENT_CONFIG"`
+	ConfigAws     AwsConfig         `yaml:"AWS_CONFIG"`
+	ConfigKmsAuth KmsConfig         `yaml:"KMSAUTH_CONFIG"`
 
 	// TODO probably remove these
-	// ClientConfig has configuration related to blessclient
+	// BlessClientConfig has configuration related to blessclient
 	ClientConfig ClientConfig `yaml:"client_config"`
 	// LambdaConfig holds configuration around the bless lambda
 	LambdaConfig LambdaConfig `yaml:"lambda_config"`
@@ -52,7 +52,8 @@ type TimeoutConfig struct {
 	Connect int `yaml:"connect"`
 }
 
-type ClientConig struct {
+type BlessClientConfig struct {
+	Cache                  bless.BlessCacheFile
 	MfaCacheDir            string   `yaml:"mfa_cache_dir"`
 	MfaCacheFile           string   `yaml:"mfa_cache_file"`
 	CacheDir               string   `yaml:"cache_dir"`

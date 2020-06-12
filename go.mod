@@ -4,12 +4,15 @@ go 1.14
 
 require (
 	cloud.google.com/go/storage v1.9.0 // indirect
+	github.com/Benbentwo/utils v0.0.0-20200514144010-dbc9c4c290f9
+	github.com/TV4/logrus-stackdriver-formatter v0.1.0 // indirect
 	github.com/aws/aws-sdk-go v1.31.10
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/chanzuckerberg/go-misc v0.0.0-20200529180313-a208b9344c4b
 	github.com/danieljoos/wincred v1.1.0 // indirect
 	github.com/davecgh/go-spew v1.1.1
+	github.com/go-errors/errors v1.1.1 // indirect
 	github.com/golang/mock v1.4.3
 	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
 	github.com/hashicorp/go-getter v1.4.1
@@ -18,6 +21,7 @@ require (
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/nightlyone/lockfile v1.0.0
 	github.com/pkg/errors v0.9.1
+	github.com/rickar/props v0.0.0-20170718221555-0b06aeb2f037 // indirect
 	github.com/segmentio/go-prompt v1.2.1-0.20161017233205-f0d19b6901ad
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/cobra v1.0.0
@@ -29,5 +33,7 @@ require (
 	golang.org/x/sys v0.0.0-20200602225109-6fdc65e7d980 // indirect
 	golang.org/x/tools v0.0.0-20200604042327-9b20fe4cabe8 // indirect
 	google.golang.org/genproto v0.0.0-20200604104852-0b0486081ffb // indirect
+	gopkg.in/AlecAivazis/survey.v1 v1.8.8 // indirect
 	gopkg.in/yaml.v2 v2.3.0
+	sigs.k8s.io/yaml v1.2.0
 )
