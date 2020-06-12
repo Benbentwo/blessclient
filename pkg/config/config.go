@@ -24,22 +24,68 @@ type Config struct {
 	// Version versions this config
 	Version int `yaml:"version"`
 
-	// ClientConfig has configuration related to blessclient
-	ClientConfig ClientConfig `yaml:"client_config"`
+	ConfigBless   BlessConfig `yaml:"BLESS_CONFIG"`
+	ConfigClient  ClientConig `yaml:"CLIENT_CONFIG"`
+	ConfigAws     AwsConfig   `yaml:"AWS_CONFIG"`
+	ConfigKmsAuth KmsConfig   `yaml:"KMSAUTH_CONFIG"`
+
+	// TODO probably remove these
 	// LambdaConfig holds configuration around the bless lambda
 	LambdaConfig LambdaConfig `yaml:"lambda_config"`
 	// For convenience, you can bundle an ~/.ssh/config template here
 	SSHConfig *SSHConfig `yaml:"ssh_config,omitempty"`
 }
-
-type ClientConfig struct {
-	// The OIDC client_id
-	OIDCClientID string `yaml:"oidc_client_id"`
-	// Oidc issuer url: eg: foo.okta.com
-	OIDCIssuerURL string `yaml:"oidc_issuer_url"`
-	// RoleARN is the aws role arn to assume to invoke the CA lambda
-	RoleARN string `yaml:"role_arn"`
+type BlessConfig struct {
+	IpCacheLifetime int           `yaml:"ipcachelifetime"`
+	FunctionName    string        `yaml:"functionname"`
+	FunctionVersion string        `yaml:"functionversion"`
+	UserRole        string        `yaml:"userrole"`
+	Timeout         TimeoutConfig `yaml:"timeoutconfig"`
+	CertLifetime    int           `yaml:"certlifetime"`
+	AccountId       int           `yaml:"accountid"`
 }
+
+type TimeoutConfig struct {
+	Read    int `yaml:"read"`
+	Connect int `yaml:"connect"`
+}
+
+type ClientConig struct {
+	MfaCacheDir            string   `yaml:"mfa_cache_dir"`
+	MfaCacheFile           string   `yaml:"mfa_cache_file"`
+	CacheDir               string   `yaml:"cache_dir"`
+	CacheFile              string   `yaml:"cache_file"`
+	UpdateScript           string   `yaml:"update_script"`
+	IpUrls                 []string `yaml:"ip_urls"`
+	DomainRegex            string   `yaml:"domain_regex"`
+	UserSessionLength      int      `yaml:"user_session_length"`
+	BlessRoleSessionLength int      `yaml:"usebless_role_session_length"`
+}
+
+type AwsConfig struct {
+	BastionIps []string `yaml:"bastion_ips"`
+	Region     string   `yaml:"region"`
+}
+
+type KmsConfig struct {
+	KmsKey    string     `yaml:"kmskey"`
+	AwsRegion string     `yaml:"awsregion"`
+	Context   KmsContext `yaml:"context"`
+}
+
+type KmsContext struct {
+	To       string `yaml:"to"`
+	UserType string `yaml:"user_type"`
+}
+
+// type ClientConfig struct {
+// 	// The OIDC client_id
+// 	OIDCClientID string `yaml:"oidc_client_id"`
+// 	// Oidc issuer url: eg: foo.okta.com
+// 	OIDCIssuerURL string `yaml:"oidc_issuer_url"`
+// 	// RoleARN is the aws role arn to assume to invoke the CA lambda
+// 	RoleARN string `yaml:"role_arn"`
+// }
 
 // Region is an aws region that contains an aws lambda
 type Region struct {
@@ -64,6 +110,7 @@ func DefaultConfig() *Config {
 	}
 }
 
+// Load
 func FromFile(confPath string) (*Config, error) {
 	expandedConfPath, err := homedir.Expand(confPath)
 	if err != nil {
